@@ -1,9 +1,9 @@
 package com.company;
 
-public class Car {
+public class Car extends Transport{
     private double speed;
     private double weight;
-    private String color;
+    private String color = "Black";
     private int length;
 
     public void setSpeed(double s) {
@@ -14,6 +14,15 @@ public class Car {
         return this.speed;
     }
 
+    public void doMove() { // <- сигнатура
+        System.out.println("Car is moving....");
+    }
+
+    // метод Car (конструктор) - перегружен
+    Car(int d, int t) {
+
+
+    }
 
     Car(double s, double w, String c, int l) {
         this.speed = s;
@@ -22,10 +31,14 @@ public class Car {
         this.length = l;
     }
 
-    public void doMove() {
+    // переопределение override
 
-    }
+    // перегрузка overload - метод doBeep перегружен
+
     public void doBeep() {
-
+        System.out.println("Beep!");
+    }
+    public void doBeep(String s) {
+        System.out.println(s);
     }
 }
